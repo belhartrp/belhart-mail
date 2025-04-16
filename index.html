@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        height: 80px;
+        width: 100%;
+        background-color: #4195d1;
+        z-index: 1000;
+      }
+
+      .header-all > img {
+        width: 45%;
+      }
+
+      img {
+        width: 35%;
+        /* background-color: yellow; */
+      }
+
+      .header-text {
+        font-family: 'fredoka';
+        font-size: 56pt;
+      }
+
+      .header-text-sec {
+        color: #4195d1;
+        font-family: 'fredoka';
+        font-size: 48pt;
+      }
+
+      .dip-header-text {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header-all {
+        display: flex;
+        justify-content: center;
+        padding-top: 80px;
+      }
+
+      .sec-text {
+        width: 80%;
+        margin: auto;
+        margin-top: 4%;
+      }
+      .sec-text-sec {
+        color: #4b5865;
+        text-align: center;
+        font-family: 'open sans';
+        font-size: 12pt;
+        word-spacing: 6px;
+      }
+
+      .sec-text-first {
+        text-align: center;
+        font-family: 'open sans';
+        font-size: 16pt;
+      }
+
+      .about {
+        width: 90%;
+        background-color: #e9ebed;
+        margin: auto;
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        border-radius: 15px;
+      }
+
+      .about-text {
+        width: 90%;
+        font-family: 'fredoka';
+      }
+
+      .about-text,
+      h1 {
+        padding-bottom: 16px;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      span .belhart-header {
+        color: #4195d1;
+      }
+
+      .about-text p {
+        font-size: 18px;
+      }
+
+      footer {
+        height: 10%;
+        background-color: #4195d1;
+        margin-top: 5%;
+      }
+
+      nav {
+        box-shadow: 0 4px 8px rgba(97, 127, 233, 0.3);
+        /* box-shadow: 0 1px 16px #cfd8f8; */
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 25px;
+      }
+
+      button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-right: 24px;
+        padding-left: 24px;
+        background-color: #4195d1;
+        border: none;
+        color: white;
+        font-family: 'fredoka';
+        border-radius: 25px;
+        font-size: 16pt;
+        font-weight: bold;
+        box-shadow: 0px 4px 2px #cecece;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1c7cc0;
+      }
+
+      footer {
+        color: white;
+        font-family: 'fredoka';
+        font-size: 16pt;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+      }
+
+      footer,
+      p {
+        letter-spacing: 1px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: normal;
+      }
+
+      .instagram {
+        margin: auto;
+      }
+
+      .alamat-ig:hover {
+        font-weight: bold;
+      }
+
+      .navbar {
+        margin-right: 64px;
+      }
+
+      .navbar li {
+        display: inline;
+      }
+
+      .navbar li a {
+        color: black;
+        font-family: 'fredoka';
+        font-weight: 600;
+        font-size: 14pt;
+        padding-right: 24px;
+      }
+
+      .navbar li a:hover {
+        text-decoration: underline;
+      }
+
+      .sb {
+        display: flex;
+        justify-content: center;
+      }
+
+      .sb-text {
+        width: 35%;
+        font-family: 'fredoka';
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14pt;
+      }
+
+      .storyset1 {
+        width: 35%;
+      }
+
+      .postfixBtn,
+      .roundcubeBtn {
+        width: 200px;
+        background-color: white;
+        border: #1c7cc0 solid;
+        box-shadow: none;
+      }
+
+      .postfixBtn a {
+        color: #1c7cc0;
+        font-weight: 600;
+      }
+
+      .roundcubeBtn a {
+        color: #1c7cc0;
+        font-weight: 600;
+      }
+
+      .postfixBtn:hover {
+        background-color: #1c7cc0;
+      }
+
+      .postfixBtn:hover a {
+        color: white;
+      }
+
+      .roundcubeBtn:hover {
+        background-color: #1c7cc0;
+      }
+
+      .roundcubeBtn:hover a {
+        color: white;
+      }
+
+      #aboutweb {
+        scroll-margin-top: 90px;
+      }
+
+      #so {
+        margin-top: 160px;
+        scroll-margin-top: 80px;
+      }
+
+      #postfix {
+        margin-top: 160px;
+        scroll-margin-top: 80px;
+      }
+
+      #roundcube {
+        margin-top: 160px;
+        scroll-margin-top: 80px;
+      }
+
+      .me {
+        margin-right: 32px;
+      }
+    </style>
+  </head>
+  <body id="home">
+    <!-- navbar -->
+    <nav>
+      <ul class="navbar">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#so">SO dan Domain</a>
+        </li>
+        <li>
+          <a href="#postfix">Postfix</a>
+        </li>
+        <li>
+          <a href="#roundcube">Roundcube</a>
+        </li>
+      </ul>
+      <button class="me"><a href="#aboutweb">Belhart Mail</a></button>
+    </nav>
+    <!-- Endnavbar -->
+    <div class="header-all">
+      <div class="dip-header-text">
+        <h1 class="header-text">Membangun Komunikasi yang Aman dan Bermartabat</h1>
+        <h1 class="header-text-sec"></h1>
+      </div>
+      <img class="storyset" src="gambar/Mail sent-amico.png" alt="" />
+    </div>
+
+    <div class="sec-text" data-aos="zoom-in" data-aos-duration="1000">
+      <h1 class="sec-text-first">Belhart Mail Server menyediakan solusi komunikasi email yang stabil, mudah diakses, dan dapat disesuaikan dengan berbagai kebutuhan pengguna di berbagai tingkat</h1>
+      <h1 class="sec-text-sec">Belhart Mail Server mendukung komunikasi efektif dan aman untuk keberlanjutan pembelajaran</h1>
+    </div>
+
+    <div class="about" data-aos="fade-up" data-aos-duration="1000" id="aboutweb">
+      <div class="about-text">
+        <span class="about-text-header">
+          <h1>Belhart</h1>
+          <h1 class="belhart-header">Mail</h1>
+        </span>
+
+        <p>
+          Proyek ini merupakan bagian dari tugas mata kuliah Administrasi Server. Tujuannya adalah agar mahasiswa memahami secara langsung bagaimana sistem email bekerja, mulai dari instalasi hingga konfigurasi server, serta bagaimana
+          mengelola email secara mandiri menggunakan perangkat lunak open-source.
+        </p>
+      </div>
+    </div>
+
+    <!-- So dan Domain -->
+    <div class="sb" id="so">
+      <img class="storyset1" src="gambar/Server-bro.png" alt="" data-aos="fade-up-right" data-aos-duration="1000" />
+      <div class="sb-text" data-aos="fade-up-left" data-aos-duration="1000">
+        <h1 class="sb-text-header">Sistem Operasi dan Domain</h1>
+        <p class="sb-text-content">
+          Saya menggunakan Linux Debian sebagai sistem operasi karena dikenal stabil dan banyak digunakan untuk kebutuhan server. Untuk mendukung proyek ini secara nyata, saya juga mengatur domain pribadi, yaitu belhart.net, yang
+          dikonfigurasikan langsung di server Debian yang saya kelola sendiri.
+        </p>
+      </div>
+    </div>
+    <!-- End So dan Domain -->
+
+    <!-- Postfix -->
+    <div class="sb" id="postfix">
+      <div class="sb-text" data-aos="fade-up-right" data-aos-duration="1000">
+        <h1 class="sb-text-header">Konfigurasi Postfix</h1>
+        <p class="sb-text-content">
+          Sebagai Mail Transfer Agent (MTA), saya menggunakan Postfix untuk menangani proses pengiriman dan penerimaan email. Postfix saya konfigurasi agar dapat berjalan melalui subdomain mail.belhart.net, sehingga alamat email yang
+          digunakan dalam pengujian memiliki format seperti nama@mail.belhart.net.
+        </p>
+        <br />
+        <button class="postfixBtn"><a href="http://www.postfix.org/">Postfix</a></button>
+      </div>
+      <img class="storyset1" src="gambar/Server-amico.png" alt="" data-aos="fade-up-left" data-aos-duration="1000" />
+    </div>
+    <!-- EndPostfix -->
+
+    <!-- roundcube -->
+    <div class="sb" id="roundcube">
+      <img class="storyset1" src="gambar/Server-pana.png" alt="" data-aos="fade-up-right" data-aos-duration="1000" />
+      <div class="sb-text" data-aos="fade-up-left" data-aos-duration="1000">
+        <h1 class="sb-text-header">Implementasi Roundcube sebagai Webmail</h1>
+        <p class="sb-text-content">
+          Agar email dapat diakses melalui browser, saya mengintegrasikan Roundcube sebagai antarmuka webmail. Roundcube menyediakan tampilan yang modern dan responsif, serta mendukung fitur-fitur dasar seperti membaca, mengirim, membalas,
+          dan mengelola email, sehingga mempermudah interaksi dengan mail server yang telah saya bangun.
+        </p>
+        <br />
+        <button class="roundcubeBtn"><a href="https://roundcube.net/">Roundcube</a></button>
+      </div>
+    </div>
+    <!-- Endroundcube -->
+
+    <footer>
+      <div class="instagram">
+        <p>Instagram : <a href="https://www.instagram.com/belhart.rp/" class="alamat-ig">belhart.rp</a></p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+      });
+    </script>
+
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.header-text-sec', { duration: 2, delay: 0.5, text: 'melalui Belhart Mail Server' });
+      gsap.to('.storyset', {
+        y: -20, // Bergerak naik sebesar 20px
+        repeat: -1, // Ulangi animasi secara berulang
+        yoyo: true, // Animasi bolak-balik (naik turun)
+        duration: 1, // Durasi satu siklus animasi (2 detik)
+        ease: 'power1.inOut', // Jenis easing untuk animasi yang smooth
+      });
+    </script>
+  </body>
+</html>
